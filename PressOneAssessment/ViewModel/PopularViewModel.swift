@@ -13,6 +13,7 @@ class PopularViewModel: ObservableObject {
     
     //https://api.themoviedb.org/3/movie/popular
     func fetchPopularMovies() async {
+        // Go to Utilities -> Constants to insert API key
         guard let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=\(Constants.apiKey)") else {
             return
         }

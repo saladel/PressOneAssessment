@@ -13,6 +13,7 @@ class NowShowingViewModel: ObservableObject {
     
     // https://api.themoviedb.org/3/movie/top_rated
     func fetchNowShowing() async {
+        // Go to Utilities -> Constants to insert API key
         guard let url = URL(string: "https://api.themoviedb.org/3/movie/top_rated?api_key=\(Constants.apiKey)") else {
             return
         }

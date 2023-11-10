@@ -14,6 +14,7 @@ class CastViewModel: ObservableObject {
     @Published var castProfiles: [CastProfile] = []
 
     func movieCredits(for movieID: Int) async {
+        // Go to Utilities -> Constants to insert API key
         let url = URL(string: "https://api.themoviedb.org/3/movie/\(movieID)/credits?api_key=\(Constants.apiKey)&language=en-US")!
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
@@ -28,6 +29,7 @@ class CastViewModel: ObservableObject {
     func loadCastProfiles() async {
         do {
             for member in cast {
+                // Go to Utilities -> Constants to insert API key
                 let url = URL(string: "https://api.themoviedb.org/3/person/\(member.id)?api_key=\(Constants.apiKey)&language=en-US")!
                 let (data, _) = try await URLSession.shared.data(from: url)
                 let profile = try JSONDecoder().decode(CastProfile.self, from: data)

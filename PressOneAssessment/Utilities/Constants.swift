@@ -8,7 +8,8 @@
 import Foundation
 
 enum Constants {
-    static var apiKey: String = "0f6752984e0888e95d2c02e79745eada"
+    // Insert API key here 👇
+    static var apiKey: String = "Your API key here"
     static var imageBaseUrl = "https://image.tmdb.org/t/p/original"
     static var apiBaseUrl = "https: //api.themoviedb.org"
     static var movieDetailBaseUrl = "https://api.themoviedb.org/3/movie/{movie_id}"
