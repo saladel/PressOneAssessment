@@ -1,9 +1,9 @@
 ## Table of contents
 
-- [Description](#features)
-- [Design](#features)
-- [Architecture and Tools Used](#running-hebron-plants)
-- [Video](#source-code)
+- [Description](#Description)
+- [Architecture and Tools Used](#Architecture-and-Tools-Used)
+- [Design](#Design)
+- [Video](#Video)
 
 ## Description
 A two-screen movie Application built using Swift and SwiftUI that displays the latest movies fetched from [TMDB](https://www.themoviedb.org) which can be filtered either by 'top rated' or 'most popular'.
