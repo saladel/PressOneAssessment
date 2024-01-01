@@ -8,10 +8,10 @@
 import Foundation
 
 
-class MovieDetailViewModel: ObservableObject {
-    @Published var popularMovies: [PopularMovie] = []
+class MovieIdDetailsViewModel: ObservableObject {
+    @Published var detailsOfMovie: [MovieIdDetailsViewModel] = []
     
-    func fetchNowShowingMovieDetails() async {
+    func fetchMovieDetails() async {
         //https://api.themoviedb.org/3/movie/975902
     //https://api.themoviedb.org/3/movie/{movie_id}
         // Go to Utilities -> Constants to insert API key
@@ -22,7 +22,7 @@ class MovieDetailViewModel: ObservableObject {
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
             let response = try JSONDecoder().decode(PopularMovieResponse.self, from: data)
-            popularMovies = response.results
+            detailsOfMovie = response.results
             print("CONSOLE: POPULAR MOVIE RESULT: \(response.results)")
         } catch {
             print("Error fetching data: \(error)")

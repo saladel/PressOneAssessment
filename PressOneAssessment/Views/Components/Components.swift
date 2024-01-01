@@ -13,8 +13,9 @@ struct TitleName: View {
     var body: some View {
         HStack {
             Text(textName)
-                .font(.title2)
-                .fontWeight(.bold)
+                .font(Font.custom("Merriweather-Bold", size: 16, relativeTo: .title2))
+                //.font(.title2)
+                //.fontWeight(.bold)
                 .foregroundStyle(Color("titletext"))
             
             Spacer()
@@ -34,15 +35,15 @@ struct SeeMoreButton: View {
     var body: some View {
         Button(action: action) {
             Text(label)
-                .font(.caption2)
-                .fontWeight(.semibold)
+                .font(Font.custom("Mulish-Bold", size: 10, relativeTo: .subheadline))
                 .foregroundStyle(Color("seemore"))
-                .opacity(0.6)
+                .opacity(0.8)
                 .padding(5)
-                .padding(.horizontal, 8)
+                //.padding(.horizontal, 8)
+                .padding(.horizontal, 3)
                 .background(
                     RoundedRectangle(cornerRadius: 20)
-                        .stroke(lineWidth: 1.5)
+                        .stroke(lineWidth: 1)
                         .foregroundStyle(Color("seemore"))
                         .opacity(0.6)
                 )
@@ -59,7 +60,7 @@ struct GenreName: View {
             .fontWeight(.semibold)
             .foregroundStyle(Color("gentext"))
             .padding(6)
-            .padding(.horizontal, 7)
+            .padding(.horizontal, 6)
             .background(
                 RoundedRectangle(cornerRadius: 20)
                     .foregroundStyle(Color("genre"))
@@ -72,15 +73,14 @@ struct TextRating: View {
     let text: String
     let imageName: String
     var body: some View {
-        HStack {
+        HStack(spacing: 4) {
             Image(systemName: imageName)
                 .resizable()
-            //.scaledToFit()Ω
-                .frame(width: 15, height: 15)
+                .frame(width: 12, height: 12)
                 .foregroundStyle(.orange)
             
             Text(text)
-                .font(.body)
+                .font(Font.custom("Mulish-Regular", size: 12))
                 .foregroundStyle(.gray)
         }
     }

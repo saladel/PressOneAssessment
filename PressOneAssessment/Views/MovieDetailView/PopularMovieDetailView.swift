@@ -24,8 +24,7 @@ struct PopularMovieDetailView: View {
                     // movie title
                     HStack {
                         Text(popularItem.title)
-                            .font(.title3)
-                            .fontWeight(.bold)
+                            .font(Font.custom("Mulish-Bold", size: 20))
                         
                         Spacer()
                         
@@ -62,20 +61,24 @@ struct PopularMovieDetailView: View {
                     // description & Overview
                     VStack(alignment: .leading, spacing: 10) {
                         Text("Description")
+                            .font(Font.custom("Merriweather-Bold", size: 16))
+                            .foregroundStyle(Color("titletext"))
+                        
                             .font(.title2)
                             .fontWeight(.bold)
                         
+                        // Movie Description
                         Text(popularItem.overview)
-                            .font(.callout)
-                            .opacity(0.5)
+                            .font(Font.custom("Mulish-Regular", size: 12))
+                            //.font(.callout)
+                            .opacity(0.3)
                             .lineLimit(10)
                     }
                     
                     // Cast
                     HStack {
                         Text("Cast")
-                            .font(.title2)
-                            .fontWeight(.bold)
+                            .font(Font.custom("Merriweather-Bold", size: 16))
                             .foregroundStyle(Color("titletext"))
                         
                         Spacer()

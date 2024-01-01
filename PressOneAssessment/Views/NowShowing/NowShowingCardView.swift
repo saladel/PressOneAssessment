@@ -10,6 +10,7 @@ import Kingfisher
 
 struct NowShowingCardView: View {
     let movie: NowShowingMovie
+    @State private var imageColor: Color = .black // Default shadow color
     
     var body: some View {
         NavigationLink(destination: MovieDetailView(movie: movie)) {
@@ -20,15 +21,16 @@ struct NowShowingCardView: View {
                         .resizable()
                         .clipShape(RoundedRectangle(cornerRadius:8))
                         .frame(width: 143, height: 212, alignment: .leading)
-                        .shadow(radius: 5)
-
+                        .shadow(color: imageColor.opacity(0.5), radius: 6, x: 0, y: 6)
+                        
                     // movie name
                     Text(movie.title)
-                        .font(.subheadline)
+                        .font(Font.custom("Mulish-Bold", size: 14, relativeTo: .subheadline))
                         .fontWeight(.bold)
                         .lineLimit(1)
                         .multilineTextAlignment(.leading)
                         .foregroundStyle(Color.black)
+                        .padding(.top, 5)
                         
                     // movie rating
                     TextRating(text: "\(movie.voteAverage.rounded(toDecimalPlaces: 1))/10 IMDb", imageName: "star.fill")

@@ -24,8 +24,7 @@ struct MovieDetailView: View {
                     // movie title
                     HStack {
                         Text(movie.title)
-                            .font(.title3)
-                            .fontWeight(.bold)
+                            .font(Font.custom("Mulish-Bold", size: 20))
                         
                         Spacer()
                         
@@ -62,20 +61,21 @@ struct MovieDetailView: View {
                     // description & Overview
                     VStack(alignment: .leading, spacing: 10) {
                         Text("Description")
-                            .font(.title2)
-                            .fontWeight(.bold)
+                            .font(Font.custom("Merriweather-Bold", size: 16))
+                            .foregroundStyle(Color("titletext"))
                         
+                        // Movie description
                         Text(movie.overview)
-                            .font(.callout)
-                            .opacity(0.5)
+                            .font(Font.custom("Mulish-Regular", size: 12))
+                            //.font(.callout)
+                            .opacity(0.3)
                             .lineLimit(.max)
                     }
                     
                     // Cast
                     HStack {
                         Text("Cast")
-                            .font(.title2)
-                            .fontWeight(.bold)
+                            .font(Font.custom("Merriweather-Bold", size: 16))
                             .foregroundStyle(Color("titletext"))
                         
                         Spacer()
@@ -123,6 +123,7 @@ struct MovieDetailView: View {
                 }
             })
         }
+        .padding(.bottom,20)
         .ignoresSafeArea()
     }
 }

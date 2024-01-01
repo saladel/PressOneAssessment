@@ -13,6 +13,7 @@ struct MovieTabsView: View {
             HomeView()
                 .tabItem {
                     Image("roll")
+                    //Image(systemName: "paperplane.fill")
                 }
             
             NowShowingView()
@@ -25,6 +26,7 @@ struct MovieTabsView: View {
                     Image("Shape")
                 }
         }
+        .tint(Color.tab)
     }
 }
 

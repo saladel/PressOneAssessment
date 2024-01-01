@@ -110,12 +110,11 @@ struct ExtractedView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(title)
-                .font(.callout)
+                .font(Font.custom("Mulish-Regular", size: 12))
                 .opacity(0.5)
             
             Text(subTitle)
-                .font(.callout)
-                .fontWeight(.medium)
+                .font(Font.custom("Mulish-Medium", size: 12))
         }
     }
 }
@@ -131,7 +130,8 @@ struct CastImageName: View {
                 .frame(width: 80, height: 80, alignment: .leading)
             
             Text(castName)
-                .font(.footnote)
+                .font(Font.custom("Mulish-Regular", size: 12))
+                .foregroundStyle(Color("titletext"))
                 .multilineTextAlignment(.leading)
                 .lineLimit(1)
         }
